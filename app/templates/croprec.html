@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+    <title>Crop Recommendation</title>
+<!--    <link rel="stylesheet" href="css/croprecomm.css">-->
+    <link href="{{ url_for('static', filename='css/croprec.css') }}" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--    <link rel="icon" type="image/x-icon" href="images/favicon1.png">-->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon1.png') }}"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="one">
+<!--                <img src="images/farming-logo.png" alt="Farming-Logo" class="logo">-->
+                <img src="{{ url_for('static', filename='images/farming-logo.png') }}" alt="Farming-Logo" class="logo">
+            </div>
+
+            <div class="two">
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('plantdisease') }}">Plant Disease</a></li>
+                    <li><a href="{{ url_for('cr') }}">Crop Recommendation</a></li>
+                    <li><a href="{{ url_for('aboutme') }}">About</a></li>
+                </ul>
+            </div>
+
+            <div class="three">
+                <ul>
+                    <li class="search"><a class="line" href="#"><span class="material-symbols-outlined">
+                        search
+                    </span></a></li>
+                    <li class="user"><a class="line" href="#"><span class="material-symbols-outlined">
+                        account_circle
+                    </span></a></li>
+                    <li class="logout"><a class="line" href="#"><span class="material-symbols-outlined">
+                        logout
+                    </span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="model">
+        <img src="{{ url_for('static', filename='images/cropbg.jpg') }}" alt="Background Image" class="logo">
+        <h5>Crop Recommendation</h5>
+        <h2>
+            <form method=post enctype=multipart/form-data>
+                <div>
+                    <span>Nitrogen(kg/ha)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="number" name="nitrogen" step="0.0001" class="form-control" placeholder="ratio of Nitrogen content in soil - kg/ha" aria-label="ratio of Nitrogen content in soil - kg/ha" aria-describedby="basic-addon1" required>
+                </div><br>
+                
+                <div>
+                    <span>Phosphorous(kg/ha)</span>&nbsp;&nbsp;&nbsp;
+                    <input type="number" name="phosphorous" step="0.0001" class="form-control" placeholder="ratio of Phosphorous content in soil - kg/ha " aria-label="ratio of Phosphorous content in soil - kg/ha " aria-describedby="basic-addon1" required>
+                </div><br>
+
+                <div>
+                    <span>Potassium(kg/ha)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="number" name="potassium" step="0.0001" class="form-control" placeholder="ratio of Potassium content in soil - kg/ha" aria-label="ratio of Potassium content in soil - kg/ha" aria-describedby="basic-addon1" required>
+                </div><br>
+
+                <div>
+                    <span>Temperature(C)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="number" name="temperature" step="0.0001" class="form-control" placeholder="temperature in degree Celsius " aria-label="temperature in degree Celsius" aria-describedby="basic-addon1" required>
+                </div><br>
+
+                <div>
+                    <span>Humidity</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="number" name="humidity" step="0.0001" class="form-control" placeholder="relative humidity in %" aria-label="relative humidity in %" aria-describedby="basic-addon1" required>
+                </div><br>
+
+                <div>
+                    <span>pH of soil</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="number" name="ph" step="0.0001" class="form-control" placeholder="pH value of the soil" aria-label="pH value of the soil" aria-describedby="basic-addon1" required>
+                </div><br>
+
+                <div>
+                    <span>Rainfall(mm)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="number" name="rainfall" step="0.0001" class="form-control" placeholder="rainfall in mm" aria-label="rainfall in mm" aria-describedby="basic-addon1" required>
+                </div><br>
+
+                <button type="submit" class="button">Submit</button>
+            </form>
+        </h2>
+    </div>
+</body>
+</html>
