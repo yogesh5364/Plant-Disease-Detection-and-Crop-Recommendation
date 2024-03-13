@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <title>Disease Detection and Crop Recpmmendation</title>
+<!--    <link rel="stylesheet" href="css/main.css">-->
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="icon" type="image/x-icon" href="images/favicon1.png"> -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon1.png') }}"/>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="one">
+                <!-- <img src="images/farming-logo.png" alt="Farming-Logo" class="logo"> -->
+                <img src="{{ url_for('static', filename='images/farming-logo.png') }}" alt="Farming-Logo" class="logo">
+            </div>
+
+            <div class="two">
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('plantdisease') }}">Plant Disease</a></li>
+                    <li><a href="{{ url_for('cr') }}">Crop Recommendation</a></li>
+                    <li><a href="{{ url_for('aboutme') }}">About</a></li>
+                </ul>
+            </div>
+
+            <div class="three">
+                <ul>
+                    <li class="search"><a class="line" href="#"><span class="material-symbols-outlined">
+                        search
+                    </span></a></li>
+                    <li class="user"><a class="line" href="#"><span class="material-symbols-outlined">
+                        account_circle
+                    </span></a></li>
+                    <li class="logout"><a class="line" href="#"><span class="material-symbols-outlined">
+                        logout
+                    </span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- <div class="model">
+        <video autoplay muted loop src="videos/Farming.mp4"></video>
+    </div> -->
+
+    <div class="model">
+<!--        <img src="images/background.jpg" alt="Background Image">-->
+        <img src="{{ url_for('static', filename='images/bg.jpg') }}" alt="Background Image" class="logo">
+        <h5>Welcome to AgriHub</h5>
+    </div>
+</body>
+</html>
